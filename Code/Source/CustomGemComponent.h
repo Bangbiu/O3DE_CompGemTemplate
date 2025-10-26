@@ -52,6 +52,20 @@ namespace CustomGem
         * does not return an error and still activates this component.
         */
         static void GetDependentServices(AZ::ComponentDescriptor::DependencyArrayType& dependent);
+    
+        CustomGemComponent();    
+    private:
+        float m_exampleOfFloat;
+        float m_exampleOfSliderValue;
+        bool exampleOfBool;
+        AZ::EntityId m_exampleOfEntityID;
+        //AZ::Transform m_exampleOfTransform; // does not work. error
+        AZ::Vector3 m_exampleOfVector3;//
+        AZ::Quaternion m_exampleOfQuaternion; // does not show the fourth value.
+        AZStd::vector<AZ::EntityId> m_exampleOfEntities;
+        AZ::Color m_exampleOfColor;
+
+        AZ::Crc32 OnAnyChanged();
 
     protected:
         /*
